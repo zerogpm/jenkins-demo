@@ -17,14 +17,9 @@ pipeline {
                 sh 'aws s3 ls'
             }
         }
-        stage('lanch EC2') {
-            steps {
-                sh 'aws ec2 run-instances --image-id ami-01896de1f162f0ab7 --count 1 --instance-type t2.micro --key-name remote-key --security-group-ids sg-0ca1a0c086195ce85 --subnet-id subnet-0165069b503b96a38'
-            }
-        }
-        // stage('check route53') {
+        // stage('lanch EC2') {
         //     steps {
-        //         sh 'aws route53 list-hosted-zones'
+        //         sh 'aws ec2 run-instances --image-id ami-01896de1f162f0ab7 --count 1 --instance-type t2.micro --key-name remote-key --security-group-ids sg-0ca1a0c086195ce85 --subnet-id subnet-0165069b503b96a38'
         //     }
         // }
     }
