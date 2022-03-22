@@ -17,5 +17,10 @@ pipeline {
                 sh 'aws s3 ls'
             }
         }
+        stage('check dockers version') {
+            steps {
+                sh 'docker --version'
+            }
+        }
     }
 }
