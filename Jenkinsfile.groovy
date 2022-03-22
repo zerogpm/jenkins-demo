@@ -17,10 +17,10 @@ pipeline {
                 sh 'aws s3 ls'
             }
         }
-        stage('check route53') {
-            steps {
-                sh 'aws route53 list-hosted-zones'
-            }
-        }
+        // stage('check route53') {
+        //     steps {
+        //         sh 'aws route53 list-hosted-zones'
+        //     }
+        // }
     }
 }
