@@ -17,9 +17,9 @@ pipeline {
                 sh 'aws s3 ls'
             }
         }
-        stage('check dockers version') {
+        stage('check route53') {
             steps {
-                sh 'docker --version'
+                sh 'aws route53 list-hosted-zones'
             }
         }
     }
