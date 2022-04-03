@@ -11,9 +11,3 @@ services:
         - ./jenkins_home:/var/jenkins_home
     restart: unless-stopped
     # use named volume in this example for jenkins_home, if you have any issues with bind mount sample, then this is recommended (named mount) and is way more performant
-
-  mails:
-    image: mailhog/mailhog
-    restart: unless-stopped
-    ports:
-      - 7025:8025
