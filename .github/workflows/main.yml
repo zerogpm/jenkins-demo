@@ -5,6 +5,7 @@ on:
 
 env:
   IMAGE_NAME: departments-api
+  Tag_Name: we
 
 jobs:
   build:
@@ -24,4 +25,4 @@ jobs:
       - name: Build & Push
         run: |
           docker build . -t ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-          docker push ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          docker push ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ env.Tag_Name }}
