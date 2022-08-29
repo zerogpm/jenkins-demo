@@ -2,6 +2,10 @@ name: master
 
 on:
   workflow_dispatch:
+    inputs:
+      description: 'Define env name'
+      require: true
+      default: 'prod'
 
 env:
   IMAGE_NAME: departments-api
