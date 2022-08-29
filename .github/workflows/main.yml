@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Define env name'
+        description: 'tag name'
         required: true
         default: 'prod'
 
@@ -29,5 +29,5 @@ jobs:
         #${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.tag }}
       - name: Build & Push
         run: |
-          docker build . -t ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ env.Tag_Name }}
-          docker push ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ env.Tag_Name }}
+          docker build . -t ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ github.event.inputs.environment }}
+          docker push ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:${{ github.event.inputs.environment }}
