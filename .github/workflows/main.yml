@@ -10,7 +10,6 @@ on:
 
 env:
   IMAGE_NAME: departments-api
-  Tag_Name: we
 
 jobs:
   build:
